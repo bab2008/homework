@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <title>Farmer data capture</title>
+ </head>
+  <body>
+    <button type="button" id="capture_button">Capture data</button>
+    <button type="button" id="dashboard_button">Trial dashboard</button>
+
+    <div id="capture_page">
+    <h1>Trials</h1>
+    <form id="trial_form">
+      <label>Trial ID</label>
+      <input type="number" id="trial_id" min="0" required>
+      <br><br>
+      <label>Trial code</label>
+      <input type="text" id="trial_code" required>
+      <br><br>
+      <label>Trial name</label>
+      <input type="text" id="trial_name" required>
+      <br><br>
+      <label>Objective</label>
+      <input type="text" id="objective" required>
+      <br><br>
+      <label>Target crop</label>
+      <select id="target_crop" required>
+        <option value="">Select a crop</option>
+        <option value="Seaweed">Seaweed</option>
+        <option value="Other">Other</option>
+      </select>
+      <br><br>
+      <label>Start date</label>
+      <input type="date" id="start_date" required>
+      <br><br>
+      <label>End date</label>
+      <input type="date" id="end_date" required>
+      <br><br>
+      <label>Status</label>
+      <select id="status" required>
+        <option value="">Select a status</option>
+        <option value="Planned">Planned</option>
+        <option value="Active">Active</option>
+        <option value="Completed">Completed</option>
+      </select>
+      <br><br>
+      <label>Created at</label>
+      <input type="datetime-local" id="created_at" required>
+      <br><br>
+
+      <h1>Trial sites</h1>
+      <label>Site ID</label>
+      <input type="number" id="site_id" min="0" required>
+      <br><br>
+      <label>Trial ID</label>
+      <input type="number" id="site_trial_id" min="0" required>
+      <br><br>
+      <label>Site name</label>
+      <input type="text" id="site_name" required>
+      <br><br>
+      <label>Latitude</label>
+      <input type="number" id="latitude" step="any" min="-90" max="90" required>
+      <br><br>
+      <label>Longitude</label>
+      <input type="number" id="longitude" step="any" min="-180" max="180" required>
+      <br><br>
+      <label>Soil type</label>
+      <input type="text" id="soil_type" required>
+      <br><br>
+      <label>Previous crop</label>
+      <input type="text" id="previous_crop" required>
+      <br><br>
+      <label>Experimental design</label>
+      <input type="text" id="experimental_design" required>
+      <br><br>
+      <label>Total replications</label>
+      <input type="number" id="total_replications" min="0" required>
+      <br><br>
+
+      <h1>Treatments</h1>
+      <label>Treatment ID</label>
+      <input type="number" id="treatment_id" min="0" required>
+      <br><br>
+      <label>Trial ID</label>
+      <input type="number" id="treatment_trial_id" min="0" required>
+      <br><br>
+      <label>Treatment number</label>
+      <input type="number" id="treatment_number" min="0" required>
+      <br><br>
+      <label>Treatment name</label>
+      <select id="treatment_name" required>
+        <option value="">Select a Treatment group</option>
+        <option value="Control">Control</option>
+        <option value="Amino acid">Amino acid</option>
+        <option value="Humic acid">Humic acid</option>
+        <option value="Fulvic acid">Fulvic acid</option>
+        <option value="Other">Other</option>
+      </select>
+      <br><br>
+      <label>Formulation details</label>
+      <input type="text" id="formulation_details" required>
+      <br><br>
+      <label>Application rate</label>
+      <input type="number" id="application_rate" step="any" min="0" required>
+      <br><br>
+      <label>Rate unit</label>
+      <input type="text" id="rate_unit" required>
+      <br><br>
+
+      <h1>Plots</h1>
+      <label>Plot ID</label>
+      <input type="number" id="plot_id" min="0" required>
+      <br><br>
+      <label>Site ID</label>
+      <input type="number" id="plot_site_id" min="0" required>
+      <br><br>
+      <label>Plot number</label>
+      <input type="number" id="plot_number" min="0" required>
+      <br><br>
+      <label>Replication number</label>
+      <input type="number" id="replication_number" min="0" required>
+      <br><br>
+      <label>Treatment ID</label>
+      <input type="number" id="plot_treatment_id" min="0" required>
+      <br><br>
+      <label>Row index</label>
+      <input type="number" id="row_index" min="0" required>
+      <br><br>
+      <label>Column index</label>
+      <input type="number" id="column_index" min="0" required>
+      <br><br>
+
+      <h1>Assessment traits</h1>
+      <label>Trait ID</label>
+      <input type="number" id="trait_id" min="0" required>
+      <br><br>
+      <label>Trial ID</label>
+      <input type="number" id="trait_trial_id" min="0" required>
+      <br><br>
+      <label>Trait name</label>
+      <input type="text" id="trait_name" required>
+      <br><br>
+      <label>Methodology</label>
+      <input type="text" id="methodology" required>
+      <br><br>
+      <label>Unit of measure</label>
+      <input type="text" id="unit_of_measure" required>
+      <br><br>
+      <label>Data type</label>
+      <select id="data_type" required>
+        <option value="">Select a data type</option>
+        <option value="Numeric">Numeric</option>
+        <option value="Text">Text</option>
+      </select>
+      <br><br>
+
+      <h1>Assessment data</h1>
+      <label>Data ID</label>
+      <input type="number" id="data_id" min="0" required>
+      <br><br>
+      <label>Plot ID</label>
+      <input type="number" id="data_plot_id" min="0" required>
+      <br><br>
+      <label>Trait ID</label>
+      <input type="number" id="data_trait_id" min="0" required>
+      <br><br>
+      <label>Assessment date</label>
+      <input type="date" id="assessment_date" required>
+      <br><br>
+      <label>Numeric value</label>
+      <input type="number" id="numeric_value" step="any">
+      <br><br>
+      <label>Text value</label>
+      <input type="text" id="text_value">
+      <br><br>
+      <label>Collected by</label>
+      <input type="text" id="collected_by" required>
+      <br><br>
+      <label>Notes</label>
+      <input type="text" id="notes">
+      <br><br>
+
+      <button type="submit">Save Trial Data</button>
+    </form>
+    </div>
+
+    <div id="dashboard_page"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
